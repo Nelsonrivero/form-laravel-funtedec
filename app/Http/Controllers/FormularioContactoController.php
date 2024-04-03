@@ -14,7 +14,6 @@ class FormularioContactoController extends Controller
 
     public function enviar(Request $request)
     {
-        // Validar los datos del formulario
         $request->validate([
             'nombre' => 'required|string',
             'email' => 'required|email',
@@ -24,7 +23,6 @@ class FormularioContactoController extends Controller
             'sede' => 'required|string',
         ]);
 
-        // Crear un nuevo registro en la base de datos
         FormularioContacto::create([
             'nombre' => $request->nombre,
             'email' => $request->email,
@@ -34,7 +32,6 @@ class FormularioContactoController extends Controller
             'sede' => $request->sede,
         ]);
 
-        // Devolver una respuesta JSON indicando éxito
         return response()->json(['success' => true]);
     }
 }

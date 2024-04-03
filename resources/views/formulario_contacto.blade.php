@@ -109,7 +109,6 @@
                         });
                     },
                     error: function(xhr, status, error) {
-                        // Mostrar cuadro de diálogo de error
                         $.alert({
                             title: 'Error',
                             content: 'Hubo un error al enviar los datos. Por favor, inténtalo de nuevo.',
